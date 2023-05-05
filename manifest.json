@@ -1,35 +1,23 @@
 {
+  "manifest_version": 3,
   "name": "快投简历",
+  "description": "一键快速海投简历",
   "version": "1.0",
-  "description": "一键海投简历,1s投递上百份简历",
-  "author": "Quinn Chen",
   "icons": {
-    "16": "/image/icon16.png",
-    "32": "/image/icon32.png",
-    "48": "/image/icon48.png",
-    "128": "/image/icon128.png"
+    "16": "images/Icon16.png",
+    "32": "images/Icon32.png",
+    "48": "images/Icon48.png",
+    "128": "images/Icon128.png"
   },
-  "permissions": ["activeTab"],
-  "manifest_version": 2,
-  "background": {
-    "scripts": ["background.js"],
-    "persistent": false
-  },
-  "browser_action": {
-    "default_icon": {
-      "16": "/image/icon16.png",
-      "32": "/image/icon32.png",
-      "48": "/image/icon48.png",
-      "128": "/image/icon128.png"
-    },
-    "default_popup": "popup.html",
-    "default_title": "快投简历"
+
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": "images/Icon128.png"
   },
   "content_scripts": [
     {
-      "matches": ["https://www.zhipin.com/*/"],
-      "js": ["script.js"],
-      "css": ["style.css"]
+      "js": ["scripts/content.js"],
+      "matches": ["https://www.zhipin.com/*", "https://www.51job.com/*"]
     }
   ]
 }
