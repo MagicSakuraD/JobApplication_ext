@@ -1,4 +1,117 @@
-.container {
-  width: 280px;
-  color: #314d3e;
+.main {
+  width: 25rem;
+  margin: 0 auto;
+  background-color: #35b9b3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding-top: 1rem;
 }
+
+body {
+  width: 25rem;
+  margin: 0;
+}
+
+.container {
+  width: 23rem;
+  display: flex; /* 设置容器为flex布局 */
+  align-items: center; /* 设置子元素在垂直方向上居中对齐 */
+  background-color: #115e59;
+  border-radius: 2rem;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.list-group {
+  background-color: #35b9b3;
+}
+
+#name {
+  margin-right: 10px; /* 设置名字和图片之间的间距 */
+}
+
+#image {
+  width: 3.4rem;
+  border-radius: 2rem;
+}
+#job-list {
+  background-color: #35b9b3;
+  margin: 0 auto 0 7rem;
+}
+
+/* 给按钮添加基本的样式 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 1rem;
+}
+
+/* 给按钮添加成功的颜色 */
+.btn-success {
+  color: white;
+  background-color: #377cfb;
+}
+
+/* 给按钮添加轮廓的样式 */
+.btn-outline {
+  color: #eeaf3a;
+  background-color: transparent;
+  border: 2px solid #1fd65f;
+}
+
+.btn:hover {
+  background-color: #377cfb;
+}
+
+#job-count {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  color: rgb(96, 165, 250); /* sky-400 */
+  opacity: 1; /* 100% */
+  margin: 0 6rem 0 auto;
+}
+
+/* 给段落添加文字颜色 */
+li {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  color: rgb(29 78 216); /* sky-400 */
+}
+
+/* 给段落添加鼠标悬停时的文字颜色 */
+li:hover {
+  color: #ea6947;
+}
+
+.font-one {
+  font-size: 1rem; /* 16px */
+  line-height: 1.5rem; /* 24px */
+  color: rgb(29 78 216); /* sky-400 */
+}
+
+.range {
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 0.25rem;
+  outline: none;
+}
+
+datalist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+/* option {
+  padding: 2px 0px 2px 5px;
+} */

@@ -3,6 +3,18 @@
   "name": "快投简历",
   "description": "一键快速海投简历",
   "version": "1.0",
+  "version_name": "1.0.0",
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["https://www.zhipin.com/*", "https://www.51job.com/*"],
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "webRequest",
+    "declarativeNetRequestWithHostAccess"
+  ],
   "icons": {
     "16": "images/Icon16.png",
     "32": "images/Icon32.png",
@@ -19,5 +31,14 @@
       "js": ["scripts/content.js"],
       "matches": ["https://www.zhipin.com/*", "https://www.51job.com/*"]
     }
-  ]
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
 }

@@ -1,18 +1,44 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link href="popup.css" rel="stylesheet" type="text/css" />
-    <script type="module" src="popup.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./popup.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="main">
+      <div class="container">
+        <p id="job-count">已投递:0</p>
+        <img id="image" src="/images/Icon512.png" alt="图片" />
+      </div>
       <div>
-        <h1>heloosdafafda</h1>
-        <button id="apply-btn">投简历</button>
-        <button id="“stop-btn”">停止</button>
-        <div class="bookmarks" id="bookmarks"></div>
+        <p class="font-one">请问，您想一次投多少份简历？</p>
+        <input
+          type="range"
+          min="0"
+          max="25"
+          value="1"
+          class="range range-success"
+          list="tickmarks"
+        />
+        <datalist id="tickmarks">
+          <option value="0" label="10"></option>
+          <option value="5" label="50"></option>
+          <option value="10" label="100"></option>
+          <option value="15" label="150"></option>
+          <option value="20" label="200"></option>
+          <option value="25" label="250"></option>
+        </datalist>
+      </div>
+      <div>
+        <button class="apply-btn btn btn-outline btn-success">投简历</button>
+      </div>
+      <div class="list-group">
+        <ol id="job-list"></ol>
       </div>
     </div>
+
+    <script src="./popup.js" type="module"></script>
   </body>
-  <script src="popup.js"></script>
 </html>
