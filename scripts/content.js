@@ -1,21 +1,30 @@
 var count = 0; // initialize a counter variable
 var intervalId; // declare a variable for the timer function
+var range_value = 1; // declare a variable for
+// 监听来自 popup.js 的消息
 
 // listen for messages from popup.js
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-  // check if the action is "scroll"
-  if (request.action === "scroll") {
+  if (request.action === "setCount") {
+    range_value = request.count_value;
+    range_value = parseInt(range_value) + 1;
+  } else if (
+    // check if the action is "scroll"
+    request.action === "scroll"
+  ) {
     // start the timer function
     intervalId = setInterval(function () {
       // scroll to the bottom of the page
       window.scrollTo(0, document.body.scrollHeight);
       // increment the counter
       count++;
-      // check if the counter reaches 10
-      if (count === 10) {
+      console.log("加载次数", range_value);
+      if (count == range_value) {
         // stop the timer
+
         clearInterval(intervalId);
         printTitles();
+        count = 1; // initialize
         // send the job titles and number of jobs to popup.js
       }
     }, 1000); // set the interval to 1000 milliseconds (1 second)
@@ -24,11 +33,12 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
 
 // define another function to print titles
 function printTitles() {
+  var but_arr = document.querySelectorAll(".btn-chat");
   var title_arr = document.querySelectorAll(".title-text");
   var jobTitles = [];
-
   title_arr.forEach((item, index) => {
     console.log(index + 1, item.innerHTML);
+    // but_arr[index].click();
     jobTitles.push(item.innerHTML);
   });
 

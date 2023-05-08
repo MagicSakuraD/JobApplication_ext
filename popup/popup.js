@@ -39,6 +39,20 @@ window.onload = function () {
   // 获取其他元素和事件监听器...
 };
 var applyBtn = document.querySelector(".apply-btn");
+const rangeInput = document.querySelector(".range");
+rangeInput.addEventListener("input", function () {
+  const value = rangeInput.value;
+  applyBtn.textContent = `投${10 + value * 10}份简历`;
+  // 发送消息到 content.js
+  console.log("这就是", value);
+  // 发送消息到 content.js
+  chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
+    chrome.tabs.sendMessage(tabs[0].id, {
+      action: "setCount",
+      count_value: value,
+    });
+  });
+});
 
 applyBtn.addEventListener("click", function () {
   // execute content.js in the current tab

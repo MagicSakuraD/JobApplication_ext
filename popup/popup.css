@@ -77,7 +77,7 @@ body {
   line-height: 1.5rem; /* 24px */
   color: rgb(96, 165, 250); /* sky-400 */
   opacity: 1; /* 100% */
-  margin: 0 6rem 0 auto;
+  margin: 0 5rem 0 auto;
 }
 
 /* 给段落添加文字颜色 */
@@ -98,13 +98,6 @@ li:hover {
   color: rgb(29 78 216); /* sky-400 */
 }
 
-.range {
-  width: 100%;
-  height: 0.5rem;
-  border-radius: 0.25rem;
-  outline: none;
-}
-
 datalist {
   display: flex;
   flex-direction: row;
@@ -112,6 +105,73 @@ datalist {
   gap: 1rem;
 }
 
-/* option {
-  padding: 2px 0px 2px 5px;
+.range {
+  /* -webkit-appearance: none; */
+  width: 100%;
+  height: 0.5rem;
+  border-radius: 1.5rem;
+  background: var(--range-track-color);
+  outline: none;
+}
+/* :root {
+  --bc: #ff0000;
+  --b1: #ef9fbc;
+}
+.range {
+  appearance: none;
+  -webkit-appearance: none;
+  --range-shdw: var(--bc);
+  background-color: transparent;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.range:focus-visible::-webkit-slider-thumb {
+  --focus-shadow: 0 0 0 6px hsl(var(--b1)) inset,
+    0 0 0 2rem hsl(var(--range-shdw)) inset;
+}
+
+.range:focus-visible::-moz-range-thumb {
+  --focus-shadow: 0 0 0 6px hsl(var(--b1)) inset,
+    0 0 0 2rem hsl(var(--range-shdw)) inset;
+}
+
+.range::-webkit-slider-runnable-track {
+  height: 8px;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: hsla(var(--bc) / 0.1);
+}
+
+.range::-moz-range-track {
+  height: 8px;
+  width: 100%;
+  border-radius: 9999px;
+  background-color: hsla(var(--bc) / 0.1);
+}
+
+.range::-webkit-slider-thumb {
+  background-color: hsl(var(--b1));
+  position: relative;
+  height: 24px;
+  width: 24px;
+  border: none;
+  border-radius: 9999px;
+  appearance: none;
+  -webkit-appearance: none;
+  top: calc(50% - (24px / 2));
+}
+
+.range::-moz-range-thumb {
+  background-color: hsl(var(--b1));
+  position: relative;
+  height: 24px;
+  width: 24px;
+  border: none;
+  border-radius: 9999px;
+  top: calc(50% - (24px / 2));
+}
+
+.range-success {
+  --range-shdw: #1fd65f;
 } */

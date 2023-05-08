@@ -9,30 +9,32 @@
   <body>
     <div class="main">
       <div class="container">
-        <p id="job-count">已投递:0</p>
+        <p id="job-count">实际已投递:0</p>
         <img id="image" src="/images/Icon512.png" alt="图片" />
       </div>
       <div>
-        <p class="font-one">请问，您想一次投多少份简历？</p>
+        <!-- <p class="font-one">一次投多少份简历？</p> -->
         <input
           type="range"
           min="0"
-          max="25"
-          value="1"
+          max="24"
+          value="0"
           class="range range-success"
           list="tickmarks"
         />
         <datalist id="tickmarks">
           <option value="0" label="10"></option>
-          <option value="5" label="50"></option>
-          <option value="10" label="100"></option>
-          <option value="15" label="150"></option>
-          <option value="20" label="200"></option>
-          <option value="25" label="250"></option>
+          <option value="4" label="50"></option>
+          <option value="9" label="100"></option>
+          <option value="14" label="150"></option>
+          <option value="19" label="200"></option>
+          <option value="24" label="250"></option>
         </datalist>
       </div>
       <div>
-        <button class="apply-btn btn btn-outline btn-success">投简历</button>
+        <button class="apply-btn btn btn-outline btn-success">
+          投10份简历
+        </button>
       </div>
       <div class="list-group">
         <ol id="job-list"></ol>
