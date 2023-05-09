@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
   "name": "快投简历",
-  "description": "一键快速海投简历",
+  "description": "一键海投,帮助您在boss直聘网站上一秒钟投递100份简历。",
   "version": "1.0",
+  "author": "Kun Chen",
   "version_name": "1.0.0",
   "background": {
     "service_worker": "background.js"

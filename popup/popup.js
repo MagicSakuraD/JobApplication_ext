@@ -1,3 +1,17 @@
+let slider = document.querySelector(".slider");
+let selector = document.getElementById("selector");
+let selectValue = document.getElementById("selectValue");
+let progressBar = document.getElementById("progressBar");
+var jobCount = document.getElementById("job-count");
+// selectValue.innerHTML = slider.value;
+selectValue.innerHTML = "空";
+// ((value/100) * 240) + 10
+slider.oninput = function () {
+  selectValue.innerHTML = (Math.round((this.value / 100) * 24) + 1) * 10;
+  selector.style.left = this.value + "%";
+  progressBar.style.width = this.value + "%";
+};
+
 // popup.js // 获取按钮元素
 
 window.onload = function () {
@@ -26,8 +40,8 @@ window.onload = function () {
       // get the elements in popup.html
       //   var name = document.getElementById("name");
       var image = document.getElementById("image");
-      // modify the elements' content or attributes
-      //   name.textContent = result.my_name;
+      jobCount.textContent = "可投递岗位:10";
+
       image.setAttribute("src", result.imgUrl);
     } else {
       // show default values
@@ -39,12 +53,11 @@ window.onload = function () {
   // 获取其他元素和事件监听器...
 };
 var applyBtn = document.querySelector(".apply-btn");
-const rangeInput = document.querySelector(".range");
+const rangeInput = document.querySelector(".slider");
 rangeInput.addEventListener("input", function () {
   const value = rangeInput.value;
-  applyBtn.textContent = `投${10 + value * 10}份简历`;
+  applyBtn.textContent = `投${(Math.round((value / 100) * 24) + 1) * 10}份简历`;
   // 发送消息到 content.js
-  console.log("这就是", value);
   // 发送消息到 content.js
   chrome.tabs.query({ active: true, currentWindow: true }, function (tabs) {
     chrome.tabs.sendMessage(tabs[0].id, {
@@ -81,8 +94,11 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
       listItem.textContent = jobTitles[i];
       jobList.appendChild(listItem);
     }
+    var lastItem = document.createElement("p");
+    lastItem.textContent = "请稍等，投递中.....";
+    jobList.appendChild(lastItem);
+    lastItem.classList.add("last");
 
-    var jobCount = document.getElementById("job-count");
-    jobCount.textContent = "投递次数: " + numJobs;
+    jobCount.textContent = "可投递岗位: " + numJobs;
   }
 });

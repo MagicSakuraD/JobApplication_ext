@@ -9,28 +9,18 @@
   <body>
     <div class="main">
       <div class="container">
-        <p id="job-count">实际已投递:0</p>
-        <img id="image" src="/images/Icon512.png" alt="图片" />
+        <p id="job-count">请登陆Boss直聘</p>
+        <img id="image" src="/images/Icon128.png" alt="图片" />
       </div>
-      <div>
-        <!-- <p class="font-one">一次投多少份简历？</p> -->
-        <input
-          type="range"
-          min="0"
-          max="24"
-          value="0"
-          class="range range-success"
-          list="tickmarks"
-        />
-        <datalist id="tickmarks">
-          <option value="0" label="10"></option>
-          <option value="4" label="50"></option>
-          <option value="9" label="100"></option>
-          <option value="14" label="150"></option>
-          <option value="19" label="200"></option>
-          <option value="24" label="250"></option>
-        </datalist>
+      <div class="main2">
+        <input type="range" min="0" max="100" value="50" class="slider" />
+        <div id="selector">
+          <div class="selectBtn"></div>
+          <div id="selectValue"></div>
+        </div>
+        <div id="progressBar"></div>
       </div>
+
       <div>
         <button class="apply-btn btn btn-outline btn-success">
           投10份简历
