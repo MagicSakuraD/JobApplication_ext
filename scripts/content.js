@@ -26,8 +26,8 @@ chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
         printTitles();
         count = 1; // initialize
         // send the job titles and number of jobs to popup.js
-        var but_arr = document.querySelectorAll(".btn-chat");
-        but_arr.forEach((button) => button.click());
+        // var but_arr = document.querySelectorAll(".btn-chat");
+        // but_arr.forEach((button) => button.click());
       }
     }, 1000); // set the interval to 1000 milliseconds (1 second)
   }
