@@ -1,4 +1,4 @@
-# JobApplication_ext快投简历扩展插件
+# 一个浏览器扩展插件：一键海投简历
 ![测试](https://raw.githubusercontent.com/MagicSakuraD/img/main/test.png)
 ![测试](https://raw.githubusercontent.com/MagicSakuraD/img/main/img/pass.jpg)
 ### 链接🔗
