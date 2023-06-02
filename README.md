@@ -1,4 +1,4 @@
-# 一个浏览器扩展程序：一键海投简历
+#快投简历——一个一键海投简历的浏览器扩展程序
 ![测试](https://raw.githubusercontent.com/MagicSakuraD/img/main/test.png)
 ![测试](https://raw.githubusercontent.com/MagicSakuraD/img/main/img/pass.jpg)
 ### 链接🔗
